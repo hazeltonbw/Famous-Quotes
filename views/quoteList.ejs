@@ -1,0 +1,31 @@
+<%- include('partials/header.ejs') %>
+<body class="flex">
+    <%- include('partials/nav.ejs') %>
+    <main class="flex flex-col p-4 ">
+        <h1 class="my-4 border-b-black/10 border-b-2">Update/Delete Quotes</h1>
+        <section class="overflow-auto">
+            <% for (i=0; i < quotes.length; i++) { %>
+                <article class="text-white">
+                    <div class="inline-flex gap-2 border-2 border-sky-400 rounded-xl p-4">
+
+                    <a href="/quote/edit?quoteId=<%=quotes[i].quoteId%>" class="hover:text-yellow-300 ">
+                        <i class="fa-solid fa-pen-to-square fa-xl"></i>
+                        Update
+                    </a>
+                    <span class="border-l-sky-400 border-l-2"></span>
+                    <a href="/quote/delete?quoteId=<%=quotes[i].quoteId%>" class="hover:text-red-500">
+                        <i class="fa-solid fa-trash fa-xl"></i>
+                        Delete
+                    </a>
+                    </div>
+                    <h2>
+                        <%= quotes[i].author %>
+                    </h2>
+                    <p>
+                        <%= quotes[i].quote %>
+                    </p>
+                </article>
+                    <% } %>
+    </main>
+</body>
+</html>

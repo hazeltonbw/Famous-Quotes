@@ -1,0 +1,40 @@
+<nav class='flex flex-col bg-sky-900 min-w-[200px] items-center'>
+  <ul class='mt-4 w-full'>
+    <li>
+      <a href='/' class="<%= path == '/' ? `bg-sky-600` : `` %>">
+        <i class='fa-solid fa-house'></i>
+        Home
+      </a>
+    </li>
+    <li>
+      <a
+        href='/author/new'
+        class="<%= path == '/author/new' ? `bg-sky-600` : `` %>"
+      >
+        <i class='fa-solid fa-user-plus'></i>
+        Add Author
+      </a>
+    </li>
+    <li>
+      <a href='/authors' class="<%= path == '/authors' ? `bg-sky-600` : `` %>">
+        <i class='fa-solid fa-address-book'></i>
+        List Authors
+      </a>
+    </li>
+    <li>
+      <a
+        href='/quote/new'
+        class="<%= path == '/quote/new' ? `bg-sky-600` : `` %>"
+      >
+        <i class='fa-solid fa-plus'></i>
+        Add Quote
+      </a>
+    </li>
+    <li>
+      <a href='/quotes' class="<%= path == '/quotes' ? `bg-sky-600` : `` %>">
+        <i class='fa-solid fa-quote-left'></i>
+        List Quotes
+      </a>
+    </li>
+  </ul>
+</nav>

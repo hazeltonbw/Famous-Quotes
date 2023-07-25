@@ -1,0 +1,101 @@
+<%- include('partials/header.ejs') %>
+<body class="flex">
+  <%- include('partials/nav.ejs') %>
+    <main class="flex flex-col w-full p-4">
+        <h1 class="my-4 border-b-black/10 border-b-2">Update Author Data</h1>
+        <section class="bg-sky-900 flex flex-col gap-2 justify-center p-4 rounded-xl">
+      <form method="POST" action="/author/edit" class="flex flex-col ">
+      <input type="hidden" name="authorId" value="<%=authorInfo[0].authorId%>">
+        <label for="fName">First Name:</label>
+        <input 
+          type='text' 
+          name='fName' 
+          value="<%= authorInfo[0].firstName %>"
+        />
+
+        <label for="lName">Last Name:</label>
+        <input 
+          type='text' 
+          name='lName' 
+          value="<%= authorInfo[0].lastName %>"
+        />
+
+        <label for="birthDate">Date of Birth:</label>
+        <input 
+          type='date' 
+          name='dob' 
+          value="<%= authorInfo[0].dobISO %>"
+        />
+
+        <label for="deathDate">Date of Death:</label>
+        <input 
+          type='date' 
+          name='dod' 
+          value="<%= authorInfo[0].dodISO %>"
+        />
+
+        <div class="flex items-center gap-2">
+          <label for="sex">Sex: </label>
+          <input 
+            type="radio" 
+            name="sex" 
+            id="male" 
+            value="M"
+            <% if (authorInfo[0].sex == "M") { %>
+              checked
+            <% } %>
+          >
+          <label for="male">Male</label>
+          <input 
+            type="radio" 
+            name="sex" 
+            id="female" 
+            value="F"
+            <% if (authorInfo[0].sex == "F") { %>
+              checked
+            <% } %>
+          >
+          <label for="female">Female</label>
+        </div>
+
+        <label for="profession">Profession: </label>
+        <input 
+          type="text" 
+          name="profession" 
+          id="profession"
+          value="<%= authorInfo[0].profession %>"
+        >
+
+        <label for="country">Country: </label>
+        <input 
+          type="text" 
+          name="country" 
+          id="country"
+          value="<%= authorInfo[0].country %>"
+        >
+
+        <label for="portrait">Portrait URL: </label>
+        <input 
+          type="text" 
+          name="portrait" 
+          id="portrait"
+          value="<%= authorInfo[0].portrait %>"
+        >
+        
+        <label for="biography">Biography: </label>
+        <textarea 
+          type="text" 
+          name="biography" 
+          id="biography"
+        ><%= authorInfo[0].biography %>
+        </textarea>
+
+        <button class="mt-2">Update Author</button>
+      </form>
+    <% if (typeof message != 'undefined'){ %>
+        <h3><%=message%></h3>
+    <% } %>
+        </section>
+  </>
+</body>
+</html>

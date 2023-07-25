@@ -1,0 +1,27 @@
+<%- include('partials/header.ejs') %>
+<body class="flex ">
+    <%- include('partials/nav.ejs') %>
+    <main class="flex flex-col w-full p-4">
+        <h1 class="my-4 border-b-black/10 border-b-2">Update/Delete Authors</h1>
+        <section>
+            <% for (i=0; i < authors.length; i++) { %>
+                <article class="text-white">
+                    <div class="inline-flex gap-2 border-2 border-sky-400 rounded-xl p-4">
+
+                    <a href="/author/edit?authorId=<%=authors[i].authorId%>" class="hover:text-yellow-300 ">
+                        <i class="fa-solid fa-pen-to-square fa-xl"></i>
+                        Update
+                    </a>
+                    <span class="border-l-sky-400 border-l-2"></span>
+                    <a href="/author/delete?authorId=<%=authors[i].authorId%>" class="hover:text-red-500">
+                        <i class="fa-solid fa-trash fa-xl"></i>
+                        Delete
+                    </a>
+                    </div>
+                    <%=authors[i].firstName%>
+                    <%=authors[i].lastName%>
+                </article>
+                    <% } %>
+    </main>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<%- include('partials/header.ejs') %>
+  <body class="flex">
+    <%- include('partials/nav.ejs') %>
+
+    <main class="flex flex-col w-full p-4">
+    <h1 class="my-4 border-b-black/10 border-b-2">Admin Section</h1>
+
+    <section class="w-fit flex-row">
+      <form action='/author/new'>
+        <button>
+            <i class='fa-solid fa-user-plus'></i>
+            Add Authors
+        </button>
+      </form><br />
+
+      <form action='/quote/new'>
+        <button>
+            <i class='fa-solid fa-plus'></i>
+            Add Quotes
+        </button>
+      </form><br />
+
+      <form action='/authors'>
+        <button>
+            <i class='fa-solid fa-address-book'></i>
+            List Authors
+        </button>
+      </form><br />
+
+      <form action='/quotes'>
+        <button>
+            <i class='fa-solid fa-quote-left'></i>
+            List Quotes
+        </button>
+      </form>
+    </>
+    </main>
+
+  </body>
+</html>
